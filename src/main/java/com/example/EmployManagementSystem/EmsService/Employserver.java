@@ -29,8 +29,8 @@ public class Employserver {
     public ApiResponce<?> insertdata(InsertEmployDto insertEmployDto) {
         Employs employs = new Employs();
 
-        employs.setFirstName(insertEmployDto.getFirstName());
-        employs.setLastName(insertEmployDto.getLastName());
+        employs.setFirstname(insertEmployDto.getFirstName());
+        employs.setLastname(insertEmployDto.getLastName());
         employs.setEmail(insertEmployDto.getEmail());
         employRepository.save(employs);
         return ResponceUtil.getSuccessMsg(1,"Employs Information Added Successfully ");
@@ -45,8 +45,8 @@ public class Employserver {
         for (Employs employ : employs) {
             FindAllEmploys findAllEmploy = new FindAllEmploys();
             findAllEmploy.setId(employ.getId());
-            findAllEmploy.setFirstName(employ.getFirstName());
-            findAllEmploy.setLastName(employ.getLastName());
+            findAllEmploy.setFirstName(employ.getFirstname());
+            findAllEmploy.setLastName(employ.getLastname());
             findAllEmploy.setEmail(employ.getEmail());
             findEmploys.add(findAllEmploy);
         }
@@ -79,8 +79,8 @@ public class Employserver {
 
             //modify
 
-            employ.setFirstName(updateEmploysDetail.getFirstName());
-            employ.setLastName(updateEmploysDetail.getLastName());
+            employ.setFirstname(updateEmploysDetail.getFirstName());
+            employ.setLastname(updateEmploysDetail.getLastName());
             employ.setEmail(updateEmploysDetail.getEmail());
            employRepository.save(employ);
            return ResponceUtil.getSuccessMsg(1,"Employs Information Update Successfully ");
